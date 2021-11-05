@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import { fetchRates } from '../../store/api-actions';
 import Converter from '../converter/converter';
 import CurrentRate from '../current-rate/current-rate';
 import NotFoundPage from '../not-found/not-found';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRates())
+  }, []);
+
   return(
     <React.Fragment>
       <BrowserRouter>

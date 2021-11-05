@@ -4,6 +4,7 @@ import { ActionType } from "./action";
 const initialState = {
   isDataLoaded: false,
   currentLanguage: 'rus',
+  currentRates: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -13,6 +14,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         currentLanguage: action.payload,
       };
+    case ActionType.LOAD_CURRENT_RATES:
+      return {
+        ...state,
+        currentRates: action.payload,
+      }  
   }
   return state;
 }

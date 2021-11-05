@@ -4,11 +4,14 @@
   "description": "Напишите SPA для конвертирования валют. Для получения текущих курсов найдите и используйте любое отрытое API.",
   "main": "index.js",
   "dependencies": {
+    "axios": "0.21.4",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-redux": "7.2.6",
     "react-router-dom": "5.2.1",
-    "redux": "4.1.2"
+    "redux": "4.1.2",
+    "redux-devtools-extension": "2.13.9",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.17",
