@@ -1,0 +1,31 @@
+{
+  "name": "3205.team",
+  "version": "1.0.0",
+  "description": "Напишите SPA для конвертирования валют. Для получения текущих курсов найдите и используйте любое отрытое API.",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.17",
+    "@babel/preset-env": "7.12.17",
+    "@babel/preset-react": "7.12.13",
+    "babel-loader": "^8.2.3",
+    "webpack-cli": "^3.3.12",
+    "webpack": "^4.46.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaros-Love/3205.team.git"
+  },
+  "author": "Yaroslav Grigorev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yaros-Love/3205.team/issues"
+  },
+  "homepage": "https://github.com/Yaros-Love/3205.team#readme"
+}
