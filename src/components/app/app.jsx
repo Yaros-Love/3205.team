@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 import {Switch, Route} from 'react-router-dom';
 import Converter from '../converter/converter';
 import CurrentRate from '../current-rate/current-rate';
+import ErrorPage from '../error-page/error-page';
 import NotFoundPage from '../not-found/not-found';
 
 const App = ({ currentLanguage, currentRate }) => {
+  if(!currentRate) {
+    return <ErrorPage/>
+  }
+
   return(
     <React.Fragment>
         <Switch>

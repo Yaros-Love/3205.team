@@ -25,7 +25,10 @@ const Converter = ({ currentLanguage, currentRate }) => {
   return (
     <React.Fragment>
       <main>
-        <h1>Converter</h1>
+        <div className="header">
+          <h1>Converter</h1>
+          <Link to="/current-rate">current rate</Link>
+        </div>
         <form 
           onSubmit={(event) => {
             event.preventDefault();
@@ -56,11 +59,7 @@ const Converter = ({ currentLanguage, currentRate }) => {
           </div>
           <button type="submit">Convert</button>
         </form>
-        {convertValue ? <p>{convertValue}</p> : ''}
-
-        <button>
-          <Link to="/current-rate">to current rate</Link>
-        </button>
+        {convertValue ? <p className="result">{convertValue}</p> : ''}
       </main>
     </React.Fragment>
   );

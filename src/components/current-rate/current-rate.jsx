@@ -5,11 +5,14 @@ import { LANGUAGES } from "../../const/const";
 
 const CurrentRate = ({ currentLanguage, currentRate }) => {
   const [currentCharCode, setNewCharCode] = useState(currentLanguage.CharCode);
-console.log(currentRate);
+
   return (
     <React.Fragment>
       <main>
-        <h1>Current Rate</h1>
+        <div className="header">
+          <h1>Current Rate</h1>
+          <Link to="/">converter</Link>
+        </div>
         <div>
           <label> Base currency
             <select 
@@ -29,9 +32,6 @@ console.log(currentRate);
               disabled/>
           </label>
         </div>
-        <button>
-          <Link to="/">to converter</Link>
-        </button>
       </main>
     </React.Fragment>
   );
