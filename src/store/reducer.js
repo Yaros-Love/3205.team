@@ -1,10 +1,9 @@
 import { LANGUAGES } from "../const/const";
 import { ActionType } from "./action";
 
-
 const initialState = {
   isDataLoaded: false,
-  currentLanguage: LANGUAGES[navigator.language || navigator.userLanguage],
+  currentLanguage: LANGUAGES[(navigator.language || navigator.userLanguage).slice(0,2)],
   currentRate: 0,
 };
 
