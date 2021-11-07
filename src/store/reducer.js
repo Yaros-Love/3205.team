@@ -1,10 +1,11 @@
+import { LANGUAGES } from "../const/const";
 import { ActionType } from "./action";
 
 
 const initialState = {
   isDataLoaded: false,
-  currentLanguage: 'rus',
-  currentRates: [],
+  currentLanguage: LANGUAGES[navigator.language || navigator.userLanguage],
+  currentRate: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +18,7 @@ const reducer = (state = initialState, action) => {
     case ActionType.LOAD_CURRENT_RATES:
       return {
         ...state,
-        currentRates: action.payload,
+        currentRate: action.payload,
       }  
   }
   return state;

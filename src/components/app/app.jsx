@@ -1,35 +1,33 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
-import { fetchRates } from '../../store/api-actions';
+import React from 'react';
+import { connect } from 'react-redux';
+import {Switch, Route} from 'react-router-dom';
 import Converter from '../converter/converter';
 import CurrentRate from '../current-rate/current-rate';
 import NotFoundPage from '../not-found/not-found';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchRates())
-  }, []);
-
+const App = ({ currentLanguage, currentRate }) => {
   return(
     <React.Fragment>
-      <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Converter/>
+            <Converter currentLanguage={currentLanguage} currentRate={currentRate}/>
           </Route>
           <Route exact path="/current-rate">
-            <CurrentRate/>
+            <CurrentRate currentLanguage={currentLanguage}/>
           </Route>
           <Route>
             <NotFoundPage/>
           </Route>
         </Switch>
-      </BrowserRouter>
     </React.Fragment>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    currentLanguage: state.currentLanguage,
+    currentRate: state.currentRate,
+  };
+};
+
+export default connect(mapStateToProps, null)(App);
